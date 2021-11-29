@@ -1,6 +1,6 @@
 import Client from './Client';
 import Invoice from './Invoice';
-import User from './User';
+import Person from './Person';
 
-export type { Client, Invoice, User };
+export type { Client, Invoice, Person };
 
