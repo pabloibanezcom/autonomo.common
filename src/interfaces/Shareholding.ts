@@ -6,5 +6,5 @@ export default interface Shareholding {
   shareholder: Person;
   percentage: number;
   startDate: Date;
-     endDate: Date;
+  endDate: Date;
 }
