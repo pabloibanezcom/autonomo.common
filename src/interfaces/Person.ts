@@ -1,7 +1,8 @@
 export default interface Person {
-  firstName: string;
-  lastName: string;
-  email: string;
+  auth0UserId?: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
   nif?: string;
   gender?: 'male' | 'female';
   picture?: string;

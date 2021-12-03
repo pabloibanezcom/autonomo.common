@@ -1,7 +1,6 @@
-import Client from './Client';
+import Company from './Company';
 
 type Currency = 'GBP' | 'EUR' | 'USD';
- 
 
 interface DescriptionElement {
   description_line_1: string;
@@ -13,7 +12,7 @@ interface DescriptionElement {
 
 export default interface Invoice {
   number: string;
-  client: Client;
+  to: Company;
   issued_date: Date;
   payment_date?: Date;
   description?: DescriptionElement[];
