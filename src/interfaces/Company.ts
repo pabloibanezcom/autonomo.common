@@ -6,6 +6,6 @@ export default interface Company {
   name: string;
   cif_vat: string;
   address?: Address;
-  director: Person;
+  director?: Person;
   shareholdings?: Shareholding[];
 }
