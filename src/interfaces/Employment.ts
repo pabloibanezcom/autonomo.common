@@ -5,6 +5,6 @@ export default interface Employment {
   employer: Company;
   emloyee: Person;
   salary: number;
-  startDate: Date;
-  endDate: Date;
+  startDate?: Date;
+  endDate?: Date;
 }
