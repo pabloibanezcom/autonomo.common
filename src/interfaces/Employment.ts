@@ -4,7 +4,7 @@ import Person from './Person';
 export default interface Employment {
   employer: Company;
   emloyee: Person;
-  salary: number;
+  salary?: number;
   startDate?: Date;
   endDate?: Date;
 }
