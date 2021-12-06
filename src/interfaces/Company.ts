@@ -7,5 +7,5 @@ export default interface Company {
   cif_vat: string;
   address?: Address;
   director: Person;
-  shareholdings: Shareholding[];
+  shareholdings?: Shareholding[];
 }
