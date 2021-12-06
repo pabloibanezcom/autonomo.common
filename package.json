@@ -1,0 +1,17 @@
+{
+  "name": "@autonomo/common",
+  "version": "0.0.7",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc --declaration",
+    "publish:patch": "npm version patch && npm publish --access=public",
+    "dev": "nodemon --watch src -e ts,ejs --exec npm run build"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "mongoose": "^6.0.14"
+  }
+}
