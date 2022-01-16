@@ -1,28 +1,27 @@
-import Company from './Company';
-
-type Currency = 'GBP' | 'EUR' | 'USD';
+import { Types } from 'mongoose';
+import AmountCurrency from './AmountCurrency';
 
 interface DescriptionElement {
-  description_line_1: string;
-  description_line_2?: string;
+  descriptionLine1: string;
+  descriptionLine2?: string;
   quantity: number;
-  unit_price: number;
-  unit_price_currency: Currency;
+  unitPrice: AmountCurrency;
 }
 
 export default interface Invoice {
   number: string;
-  to: Company;
-  issued_date: Date;
-  payment_date?: Date;
+  issuer: Types.ObjectId;
+  issuerType?: string;
+  client: Types.ObjectId;
+  clientType?: string;
+  issuedDate: Date;
+  paymentDate?: Date;
   description?: DescriptionElement[];
-  tax_base: number;
-  tax_base_currency: Currency;
-  tax_pct: number;
-  tax: number;
-  tax_currency: Currency;
-  total: number;
-  total_currency: Currency;
-  total_euro: number;
-  currency_rate?: number;
+  subtotal: AmountCurrency;
+  taxPct: number;
+  tax: AmountCurrency;
+  deductibleTaxPct?: number;
+  deductibleTax?: AmountCurrency;
+  total: AmountCurrency;
+  totalOthers?: AmountCurrency[];
 }
