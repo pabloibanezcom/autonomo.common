@@ -4,5 +4,6 @@ import Employment from './Employment';
 import Invoice from './Invoice';
 import Person from './Person';
 import Shareholding from './Shareholding';
+import TaxPayment from './TaxPayment';
 
-export type { Auth0User, Company, Employment, Invoice, Person, Shareholding };
+export type { Auth0User, Company, Employment, Invoice, Person, Shareholding, TaxPayment };
