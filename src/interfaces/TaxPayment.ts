@@ -1,11 +1,12 @@
 import { Types } from 'mongoose';
-import TaxPaymentType from '../types/TaxPaymentType';
+import TaxType from '../types/TaxType';
 import AmountCurrency from './AmountCurrency';
 
 export default interface TaxPayment {
   payer: Types.ObjectId;
   payerType: string;
-  type: TaxPaymentType;
+  taxYear: Types.ObjectId;
+  type: TaxType;
   date: Date;
   amount: AmountCurrency;
   description?: string;
