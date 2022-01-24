@@ -18,6 +18,7 @@ export default interface Invoice {
   issuedDate: Date;
   paymentDate?: Date;
   description?: DescriptionElement[];
+  categories?: Types.ObjectId[];
   subtotal: AmountCurrency;
   taxPct: number;
   tax: AmountCurrency;
