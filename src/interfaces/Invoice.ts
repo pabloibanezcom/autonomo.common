@@ -1,5 +1,6 @@
 import { Types } from 'mongoose';
 import AmountCurrency from './AmountCurrency';
+import File from './File';
 
 interface DescriptionElement {
   descriptionLine1: string;
@@ -24,4 +25,5 @@ export default interface Invoice {
   deductibleTax?: AmountCurrency;
   total: AmountCurrency;
   totalOthers?: AmountCurrency[];
+  file?: File;
 }
