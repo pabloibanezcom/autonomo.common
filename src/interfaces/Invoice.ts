@@ -20,11 +20,14 @@ export default interface Invoice {
   description?: DescriptionElement[];
   categories?: Types.ObjectId[];
   subtotal: AmountCurrency;
+  subtotalBaseCurrency?: AmountCurrency;
   taxPct: number;
   tax: AmountCurrency;
+  taxBaseCurrency?: AmountCurrency;
   deductibleTaxPct?: number;
   deductibleTax?: AmountCurrency;
+  isDeductible?: boolean;
   total: AmountCurrency;
-  totalOthers?: AmountCurrency[];
+  totalBaseCurrency?: AmountCurrency;
   file?: File;
 }
