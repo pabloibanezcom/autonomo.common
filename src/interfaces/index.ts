@@ -4,6 +4,7 @@ import Company from './Company';
 import Employment from './Employment';
 import File from './File';
 import Invoice from './Invoice';
+import NationalInsurancePayment from './NationalInsurancePayment';
 import Person from './Person';
 import Shareholding from './Shareholding';
 import TaxDefinition from './TaxDefinition';
@@ -18,6 +19,7 @@ export type {
   File,
   Invoice,
   Person,
+  NationalInsurancePayment,
   Shareholding,
   TaxDefinition,
   TaxPayment,
