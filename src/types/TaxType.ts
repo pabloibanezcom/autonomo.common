@@ -1,3 +1,3 @@
-type TaxType = 'incomeTax' | 'dividendsTax';
+type TaxType = 'incomeTax' | 'dividendsTax' | 'VAT';
 
 export default TaxType;

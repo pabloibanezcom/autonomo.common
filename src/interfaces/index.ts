@@ -10,7 +10,9 @@ import Shareholding from './Shareholding';
 import TaxDefinition from './TaxDefinition';
 import TaxPayment from './TaxPayment';
 import TaxYear from './TaxYear';
+import YearReport from './YearReport';
 
+export * from './searchFilters';
 export type {
   Auth0User,
   Company,
@@ -23,5 +25,6 @@ export type {
   Shareholding,
   TaxDefinition,
   TaxPayment,
-  TaxYear
+  TaxYear,
+  YearReport
 };
