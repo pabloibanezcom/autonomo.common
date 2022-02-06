@@ -2,8 +2,9 @@ import { Types } from 'mongoose';
 
 export default interface YearReport {
   _id?: Types.ObjectId;
-  creationDate: Date;
+  business: Types.ObjectId;
   taxYear: Types.ObjectId;
+  creationDate: Date;
   incomes: number;
   expenses: number;
   VATBalance: number;

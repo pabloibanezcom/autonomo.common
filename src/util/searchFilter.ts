@@ -1,4 +1,3 @@
-import { Types } from 'mongoose';
 import {
   BaseFilter,
   BaseQuery,
@@ -33,10 +32,7 @@ export const transformSearchFilterToTaxPaymentQuery = (searchFilter: TaxPaymentF
   };
 };
 
-export const transformSearchFilterToInvoiceQuery = (
-  searchFilter: InvoiceFilter,
-  userId: Types.ObjectId
-): InvoiceQuery => {
+export const transformSearchFilterToInvoiceQuery = (searchFilter: InvoiceFilter): InvoiceQuery => {
   const { startIssuedDate, endIssuedDate, startPaymentDate, endPaymentDate, type } = searchFilter;
   return {
     ...transformSearchFilterToQuery(searchFilter),
@@ -49,7 +45,6 @@ export const transformSearchFilterToInvoiceQuery = (
         ...(endPaymentDate && { $lte: endPaymentDate })
       }
     }),
-    ...(type === 'income' && { issuer: userId }),
-    ...(type === 'expense' && { client: userId })
+    ...(type && { type: type })
   };
 };

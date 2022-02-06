@@ -1,4 +1,5 @@
 import { Types } from 'mongoose';
+import InvoiceType from '../types/InvoiceType';
 import AmountCurrency from './AmountCurrency';
 import File from './File';
 
@@ -11,10 +12,9 @@ interface DescriptionElement {
 
 export default interface Invoice {
   number: string;
-  issuer: Types.ObjectId;
-  issuerType?: string;
-  client: Types.ObjectId;
-  clientType?: string;
+  business: Types.ObjectId;
+  type: InvoiceType;
+  issuerOrClient: Types.ObjectId;
   issuedDate: Date;
   paymentDate?: Date;
   description?: DescriptionElement[];
