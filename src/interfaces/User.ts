@@ -1,8 +1,10 @@
 import { Types } from 'mongoose';
 import Address from './Address';
 
-export default interface Person {
+export default interface User {
   _id: Types.ObjectId;
+  auth0UserId?: string;
+  isAdmin?: boolean;
   firstName?: string;
   lastName?: string;
   email: string;

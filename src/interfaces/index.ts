@@ -1,28 +1,28 @@
-import Auth0User from './Auth0User';
+import AuthorisedPerson from './AuthorisedPerson';
+import Business from './Business';
 import Category from './Category';
 import Company from './Company';
-import Employment from './Employment';
 import File from './File';
 import Invoice from './Invoice';
 import NationalInsurancePayment from './NationalInsurancePayment';
 import Person from './Person';
-import Shareholding from './Shareholding';
 import TaxDefinition from './TaxDefinition';
 import TaxPayment from './TaxPayment';
 import TaxYear from './TaxYear';
+import User from './User';
 import YearReport from './YearReport';
 
 export * from './searchFilters';
 export type {
-  Auth0User,
-  Company,
+  AuthorisedPerson,
+  Business,
   Category,
-  Employment,
+  Company,
   File,
   Invoice,
-  Person,
   NationalInsurancePayment,
-  Shareholding,
+  Person,
+  User,
   TaxDefinition,
   TaxPayment,
   TaxYear,

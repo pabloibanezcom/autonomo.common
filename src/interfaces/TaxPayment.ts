@@ -3,8 +3,7 @@ import TaxType from '../types/TaxType';
 import AmountCurrency from './AmountCurrency';
 
 export default interface TaxPayment {
-  payer: Types.ObjectId;
-  payerType: string;
+  business: Types.ObjectId;
   taxYear: Types.ObjectId;
   type: TaxType;
   date: Date;
