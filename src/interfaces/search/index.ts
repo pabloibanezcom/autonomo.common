@@ -19,6 +19,7 @@ import Pagination from './Pagination';
 import PersonFilter from './PersonFilter';
 import PersonQuery from './PersonQuery';
 import PersonSearchResult from './PersonSearchResult';
+import Sorting from './Sorting';
 import TaxPaymentFilter from './TaxPaymentFilter';
 import TaxPaymentQuery from './TaxPaymentQuery';
 import TaxPaymentSearchResult from './TaxPaymentSearchResult';
@@ -48,6 +49,7 @@ export type {
   PersonFilter,
   PersonQuery,
   PersonSearchResult,
+  Sorting,
   TaxPaymentFilter,
   TaxPaymentQuery,
   TaxPaymentSearchResult,

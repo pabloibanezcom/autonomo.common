@@ -15,17 +15,22 @@ import {
   Pagination,
   PersonFilter,
   PersonQuery,
+  Sorting,
   TaxPaymentFilter,
   TaxPaymentQuery,
   TaxYearFilter,
   TaxYearQuery
 } from '../interfaces';
 
-export const transformPaginationToQueryOptions = (pagination: Pagination): QueryOptions => {
+export const transformPaginationToQueryOptions = (pagination: Pagination, sorting: Sorting): QueryOptions => {
   if (!pagination) {
     return null;
   }
-  return { limit: pagination.items, skip: (pagination.page - 1) * pagination.items };
+  return {
+    limit: pagination.items,
+    skip: (pagination.page - 1) * pagination.items,
+    sort: sorting?.sortBy ? `${sorting.desc && '-'}${sorting.sortBy}` : undefined
+  };
 };
 
 export const transformSearchFilterToQuery = (searchFilter: BaseFilter): BaseQuery => {
