@@ -12,7 +12,7 @@ import TaxYear from './TaxYear';
 import User from './User';
 import YearReport from './YearReport';
 
-export * from './searchFilters';
+export * from './search';
 export type {
   AuthorisedPerson,
   Business,
