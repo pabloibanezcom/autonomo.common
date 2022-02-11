@@ -3,7 +3,7 @@ import { AuthorisedPerson, Company, Person } from '.';
 import BusinessType from '../types/BusinessType';
 
 export default interface Business {
-  _id: Types.ObjectId;
+  _id?: Types.ObjectId;
   name: string;
   type: BusinessType;
   company?: Company;
