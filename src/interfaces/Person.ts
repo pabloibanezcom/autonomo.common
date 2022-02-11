@@ -2,7 +2,7 @@ import { Types } from 'mongoose';
 import Address from './Address';
 
 export default interface Person {
-  _id: Types.ObjectId;
+  _id?: Types.ObjectId;
   firstName?: string;
   lastName?: string;
   email: string;
