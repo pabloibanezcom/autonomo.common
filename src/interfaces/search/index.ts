@@ -1,5 +1,6 @@
 import BaseFilter from './BaseFilter';
 import BaseQuery from './BaseQuery';
+import BaseSearchResult from './BaseSearchResult';
 import BusinessFilter from './BusinessFilter';
 import BusinessQuery from './BusinessQuery';
 import BusinessSearchResult from './BusinessSearchResult';
@@ -30,6 +31,7 @@ import TaxYearSearchResult from './TaxYearSearchResult';
 export type {
   BaseFilter,
   BaseQuery,
+  BaseSearchResult,
   BusinessFilter,
   BusinessQuery,
   BusinessSearchResult,
