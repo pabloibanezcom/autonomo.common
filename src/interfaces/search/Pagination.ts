@@ -1,6 +1,6 @@
 export default interface Pagination {
   page: number;
-  items: number;
+  items?: number;
   totalPages?: number;
   totalItems?: number;
   prevPage?: number;

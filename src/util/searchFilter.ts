@@ -2,6 +2,7 @@ import { QueryOptions } from 'mongoose';
 import {
   BaseFilter,
   BaseQuery,
+  BaseSearchResult,
   BusinessFilter,
   BusinessQuery,
   CategoryFilter,
@@ -29,7 +30,7 @@ export const transformPaginationToQueryOptions = (pagination: Pagination, sortin
   return {
     limit: pagination.items,
     skip: (pagination.page - 1) * pagination.items,
-    sort: sorting?.sortBy ? `${sorting.desc && '-'}${sorting.sortBy}` : undefined
+    sort: sorting?.sortBy ? `${sorting.desc ? '-' : ''}${sorting.sortBy}` : undefined
   };
 };
 
@@ -40,6 +41,12 @@ export const transformSearchFilterToQuery = (searchFilter: BaseFilter): BaseQuer
       date: { ...(startDate && { $gte: startDate }), ...(endDate && { $lte: endDate }) }
     })
   };
+};
+
+export const transformSearchResultToFilter = (searchResult: BaseSearchResult): BaseFilter => {
+  const newSearchResult = { ...searchResult };
+  delete newSearchResult.items;
+  return newSearchResult;
 };
 
 export const transformSearchFilterToBusinessQuery = (searchFilter: BusinessFilter): BusinessQuery => {
@@ -104,12 +111,33 @@ export const transformSearchFilterToTaxYearQuery = (searchFilter: TaxYearFilter)
 };
 
 export const buildPagination = (requestPagination: Pagination, totalItems: number): Pagination => {
-  const totalPages = Math.ceil(totalItems / requestPagination.items);
+  const page = requestPagination?.page || 1;
+  const items = requestPagination?.items || 10;
+  const totalPages = Math.ceil(totalItems / items);
   return {
     ...requestPagination,
+    page,
+    items,
     totalItems,
     totalPages,
-    prevPage: requestPagination.page > 1 ? requestPagination.page - 1 : null,
-    nextPage: requestPagination.page < totalPages ? requestPagination.page + 1 : null
+    prevPage: page > 1 ? page - 1 : null,
+    nextPage: page < totalPages ? page + 1 : null
+  };
+};
+
+export const buildSorting = (sorting: Sorting, sortBy: string): Sorting => {
+  return (
+    sorting || {
+      sortBy: sortBy || '_id',
+      desc: false
+    }
+  );
+};
+
+export const buildSearchFilter = (searchFilter: BaseFilter, totalItems: number, sortBy: string = null): BaseFilter => {
+  return {
+    ...searchFilter,
+    pagination: buildPagination(searchFilter.pagination, totalItems),
+    sorting: buildSorting(searchFilter.sorting, sortBy)
   };
 };

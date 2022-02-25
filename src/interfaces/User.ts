@@ -3,11 +3,11 @@ import Address from './Address';
 
 export default interface User {
   _id?: Types.ObjectId;
-  auth0UserId?: string;
   isAdmin?: boolean;
   firstName?: string;
   lastName?: string;
   email: string;
+  password?: string;
   nif?: string;
   gender?: 'male' | 'female';
   picture?: string;

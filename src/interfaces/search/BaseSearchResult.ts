@@ -1,7 +1,5 @@
-import Pagination from './Pagination';
-import Sorting from './Sorting';
+import { BaseFilter } from '.';
 
-export default interface BaseSearchResult {
-  pagination?: Pagination;
-  sorting?: Sorting;
+export default interface BaseSearchResult extends BaseFilter {
+  items?: any[];
 }
