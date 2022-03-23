@@ -24,12 +24,9 @@ import {
 } from '../interfaces';
 
 export const transformPaginationToQueryOptions = (pagination: Pagination, sorting: Sorting): QueryOptions => {
-  if (!pagination) {
-    return null;
-  }
   return {
-    limit: pagination.items,
-    skip: (pagination.page - 1) * pagination.items,
+    limit: pagination?.items,
+    skip: pagination ? (pagination.page - 1) * pagination.items : undefined,
     sort: sorting?.sortBy ? `${sorting.desc ? '-' : ''}${sorting.sortBy}` : undefined
   };
 };

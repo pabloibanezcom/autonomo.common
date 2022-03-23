@@ -11,6 +11,7 @@ interface DescriptionElement {
 }
 
 export default interface Invoice {
+  _id?: Types.ObjectId;
   number: string;
   business: Types.ObjectId;
   type: InvoiceType;
