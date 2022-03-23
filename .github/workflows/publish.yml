@@ -4,6 +4,7 @@ on:
   release:
     # This specifies that the build will be triggered when we publish a release
     types: [published]
+  workflow_dispatch:
 
 jobs:
   build:
