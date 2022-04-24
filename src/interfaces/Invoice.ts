@@ -1,13 +1,20 @@
-import { Types } from 'mongoose';
+import { PopulatedDoc, Types } from 'mongoose';
+import Currency from '../types/Currency';
 import InvoiceType from '../types/InvoiceType';
-import AmountCurrency from './AmountCurrency';
+import Category from './Category';
+import Company from './Company';
+import CurrencyAmount from './CurrencyAmount';
 import File from './File';
 
-interface DescriptionElement {
+export interface InvoiceProductOrService {
   descriptionLine1: string;
   descriptionLine2?: string;
   quantity: number;
-  unitPrice: AmountCurrency;
+  unitPrice: CurrencyAmount;
+  subtotal: CurrencyAmount;
+  taxPct: number;
+  tax: CurrencyAmount;
+  total: CurrencyAmount;
 }
 
 export default interface Invoice {
@@ -15,20 +22,21 @@ export default interface Invoice {
   number: string;
   business: Types.ObjectId;
   type: InvoiceType;
-  issuerOrClient: Types.ObjectId;
+  issuerOrClient: PopulatedDoc<Company>;
   issuedDate: Date;
   paymentDate?: Date;
-  description?: DescriptionElement[];
-  categories?: Types.ObjectId[];
-  subtotal: AmountCurrency;
-  subtotalBaseCurrency?: AmountCurrency;
+  productsOrServices?: InvoiceProductOrService[];
+  categories?: PopulatedDoc<Category>[];
+  baseCurrency: Currency;
+  subtotal: CurrencyAmount;
+  subtotalBaseCurrency?: CurrencyAmount;
   taxPct: number;
-  tax: AmountCurrency;
-  taxBaseCurrency?: AmountCurrency;
+  tax: CurrencyAmount;
+  taxBaseCurrency?: CurrencyAmount;
   deductibleTaxPct?: number;
-  deductibleTax?: AmountCurrency;
+  deductibleTax?: CurrencyAmount;
   isDeductible?: boolean;
-  total: AmountCurrency;
-  totalBaseCurrency?: AmountCurrency;
+  total: CurrencyAmount;
+  totalBaseCurrency?: CurrencyAmount;
   file?: File;
 }

@@ -1,7 +1,7 @@
 import Currency from '../types/Currency';
 
-export default interface AmountCurrency {
+export default interface CurrencyAmount {
   amount: number;
   currency: Currency;
-  primaryCurrencyRate?: number;
+  baseCurrencyRate?: number;
 }

@@ -1,6 +1,6 @@
 import { Types } from 'mongoose';
 import TaxType from '../types/TaxType';
-import AmountCurrency from './AmountCurrency';
+import CurrencyAmount from './CurrencyAmount';
 
 export default interface TaxPayment {
   _id?: Types.ObjectId;
@@ -8,6 +8,6 @@ export default interface TaxPayment {
   taxYear: Types.ObjectId;
   type: TaxType;
   date: Date;
-  amount: AmountCurrency;
+  amount: CurrencyAmount;
   description?: string;
 }
