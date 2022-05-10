@@ -4,8 +4,11 @@ import Category from './Category';
 import Company from './Company';
 import CurrencyAmount from './CurrencyAmount';
 import ExchangeRate from './ExchangeRate';
+import Expense from './Expense';
 import File from './File';
-import Invoice, { InvoiceProductOrService } from './Invoice';
+import Income from './Income';
+import Invoice from './Invoice';
+import InvoiceProductOrService from './InvoiceProductOrService';
 import NationalInsurancePayment from './NationalInsurancePayment';
 import Person from './Person';
 import TaxDefinition from './TaxDefinition';
@@ -23,7 +26,9 @@ export type {
   Category,
   Company,
   ExchangeRate,
+  Expense,
   File,
+  Income,
   Invoice,
   InvoiceProductOrService,
   NationalInsurancePayment,

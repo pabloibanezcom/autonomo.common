@@ -7,6 +7,7 @@ export default interface Company {
   _id: Types.ObjectId;
   business: Types.ObjectId;
   name: string;
+  country?: string;
   cifVat?: string;
   address?: Address;
   director?: Person;

@@ -10,9 +10,12 @@ import CategorySearchResult from './CategorySearchResult';
 import CompanyFilter from './CompanyFilter';
 import CompanyQuery from './CompanyQuery';
 import CompanySearchResult from './CompanySearchResult';
-import InvoiceFilter from './InvoiceFilter';
-import InvoiceQuery from './InvoiceQuery';
-import InvoiceSearchResult from './InvoiceSearchResult';
+import ExpenseFilter from './ExpenseFilter';
+import ExpenseQuery from './ExpenseQuery';
+import ExpenseSearchResult from './ExpenseSearchResult';
+import IncomeFilter from './IncomeFilter';
+import IncomeQuery from './IncomeQuery';
+import IncomeSearchResult from './IncomeSearchResult';
 import NationalInsurancePaymentFilter from './NationalInsurancePaymentFilter';
 import NationalInsurancePaymentQuery from './NationalInsurancePaymentQuery';
 import NationalInsurancePaymentSearchResult from './NationalInsurancePaymentSearchResult';
@@ -41,9 +44,12 @@ export type {
   CompanyFilter,
   CompanyQuery,
   CompanySearchResult,
-  InvoiceFilter,
-  InvoiceQuery,
-  InvoiceSearchResult,
+  ExpenseFilter,
+  ExpenseQuery,
+  ExpenseSearchResult,
+  IncomeFilter,
+  IncomeQuery,
+  IncomeSearchResult,
   NationalInsurancePaymentFilter,
   NationalInsurancePaymentQuery,
   NationalInsurancePaymentSearchResult,

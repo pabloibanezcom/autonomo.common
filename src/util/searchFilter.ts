@@ -9,8 +9,10 @@ import {
   CategoryQuery,
   CompanyFilter,
   CompanyQuery,
-  InvoiceFilter,
-  InvoiceQuery,
+  ExpenseFilter,
+  ExpenseQuery,
+  IncomeFilter,
+  IncomeQuery,
   NationalInsurancePaymentFilter,
   NationalInsurancePaymentQuery,
   Pagination,
@@ -64,8 +66,8 @@ export const transformSearchFilterToCompanyQuery = (searchFilter: CompanyFilter)
   };
 };
 
-export const transformSearchFilterToInvoiceQuery = (searchFilter: InvoiceFilter): InvoiceQuery => {
-  const { startIssuedDate, endIssuedDate, startPaymentDate, endPaymentDate, type } = searchFilter;
+export const transformSearchFilterToIncomeQuery = (searchFilter: IncomeFilter): IncomeQuery => {
+  const { startIssuedDate, endIssuedDate, startPaymentDate, endPaymentDate } = searchFilter;
   return {
     ...transformSearchFilterToQuery(searchFilter),
     ...((startIssuedDate || endIssuedDate) && {
@@ -76,8 +78,23 @@ export const transformSearchFilterToInvoiceQuery = (searchFilter: InvoiceFilter)
         ...(startPaymentDate && { $gte: startPaymentDate }),
         ...(endPaymentDate && { $lte: endPaymentDate })
       }
+    })
+  };
+};
+
+export const transformSearchFilterToExpenseQuery = (searchFilter: ExpenseFilter): ExpenseQuery => {
+  const { startIssuedDate, endIssuedDate, startPaymentDate, endPaymentDate } = searchFilter;
+  return {
+    ...transformSearchFilterToQuery(searchFilter),
+    ...((startIssuedDate || endIssuedDate) && {
+      issuedDate: { ...(startIssuedDate && { $gte: startIssuedDate }), ...(endIssuedDate && { $lte: endIssuedDate }) }
     }),
-    ...(type && { type: type })
+    ...((startPaymentDate || endPaymentDate) && {
+      paymentDate: {
+        ...(startPaymentDate && { $gte: startPaymentDate }),
+        ...(endPaymentDate && { $lte: endPaymentDate })
+      }
+    })
   };
 };
 

@@ -32,15 +32,25 @@ const ADD_COMPANY = concatRoutePaths([BUSINESS_ID, COMPANY]);
 const UPDATE_COMPANY = concatRoutePaths([BUSINESS_ID, COMPANY, ID]);
 const DELETE_COMPANY = concatRoutePaths([BUSINESS_ID, COMPANY, ID]);
 
-// invoice
-const INVOICE = 'invoice';
-const SEARCH_INVOICES = concatRoutePaths([BUSINESS_ID, INVOICE, SEARCH]);
-const GET_INVOICE = concatRoutePaths([BUSINESS_ID, INVOICE, ID]);
-const ADD_INVOICE = concatRoutePaths([BUSINESS_ID, INVOICE]);
-const UPDATE_INVOICE = concatRoutePaths([BUSINESS_ID, INVOICE, ID]);
-const DELETE_INVOICE = concatRoutePaths([BUSINESS_ID, INVOICE, ID]);
-const ADD_FILE_TO_INVOICE = concatRoutePaths([BUSINESS_ID, INVOICE, ID, FILE]);
-const DELETE_FILE_FROM_INVOICE = concatRoutePaths([BUSINESS_ID, INVOICE, ID, FILE]);
+// expense
+const EXPENSE = 'expense';
+const SEARCH_EXPENSES = concatRoutePaths([BUSINESS_ID, EXPENSE, SEARCH]);
+const GET_EXPENSE = concatRoutePaths([BUSINESS_ID, EXPENSE, ID]);
+const ADD_EXPENSE = concatRoutePaths([BUSINESS_ID, EXPENSE]);
+const UPDATE_EXPENSE = concatRoutePaths([BUSINESS_ID, EXPENSE, ID]);
+const DELETE_EXPENSE = concatRoutePaths([BUSINESS_ID, EXPENSE, ID]);
+const ADD_FILE_TO_EXPENSE = concatRoutePaths([BUSINESS_ID, EXPENSE, ID, FILE]);
+const DELETE_FILE_FROM_EXPENSE = concatRoutePaths([BUSINESS_ID, EXPENSE, ID, FILE]);
+
+// income
+const INCOME = 'income';
+const SEARCH_INCOMES = concatRoutePaths([BUSINESS_ID, INCOME, SEARCH]);
+const GET_INCOME = concatRoutePaths([BUSINESS_ID, INCOME, ID]);
+const ADD_INCOME = concatRoutePaths([BUSINESS_ID, INCOME]);
+const UPDATE_INCOME = concatRoutePaths([BUSINESS_ID, INCOME, ID]);
+const DELETE_INCOME = concatRoutePaths([BUSINESS_ID, INCOME, ID]);
+const ADD_FILE_TO_INCOME = concatRoutePaths([BUSINESS_ID, INCOME, ID, FILE]);
+const DELETE_FILE_FROM_INCOME = concatRoutePaths([BUSINESS_ID, INCOME, ID, FILE]);
 
 // national insurance payment
 const NATIONAL_INSURANCE_PAYMENT = 'national-insurance-payment';
@@ -70,6 +80,7 @@ const DELETE_TAX_PAYMENT = concatRoutePaths([BUSINESS_ID, TAX_PAYMENT, ID]);
 const TAX_YEAR = 'tax-year';
 const SEARCH_TAX_YEARS = concatRoutePaths([TAX_YEAR, SEARCH]);
 const GET_TAX_YEAR = concatRoutePaths([TAX_YEAR, ID]);
+const GET_BUSINESS_TAX_YEAR = concatRoutePaths([BUSINESS_ID, TAX_YEAR]);
 const ADD_TAX_YEAR = concatRoutePaths([TAX_YEAR]);
 const UPDATE_TAX_YEAR = concatRoutePaths([TAX_YEAR, ID]);
 const DELETE_TAX_YEAR = concatRoutePaths([TAX_YEAR, ID]);
@@ -98,13 +109,20 @@ export const Routes = {
   ADD_COMPANY,
   UPDATE_COMPANY,
   DELETE_COMPANY,
-  SEARCH_INVOICES,
-  GET_INVOICE,
-  ADD_INVOICE,
-  UPDATE_INVOICE,
-  DELETE_INVOICE,
-  ADD_FILE_TO_INVOICE,
-  DELETE_FILE_FROM_INVOICE,
+  SEARCH_EXPENSES,
+  GET_EXPENSE,
+  ADD_EXPENSE,
+  UPDATE_EXPENSE,
+  DELETE_EXPENSE,
+  ADD_FILE_TO_EXPENSE,
+  DELETE_FILE_FROM_EXPENSE,
+  SEARCH_INCOMES,
+  GET_INCOME,
+  ADD_INCOME,
+  UPDATE_INCOME,
+  DELETE_INCOME,
+  ADD_FILE_TO_INCOME,
+  DELETE_FILE_FROM_INCOME,
   SEARCH_NATIONAL_INSURANCE_PAYMENTS,
   GET_NATIONAL_INSURANCE_PAYMENT,
   ADD_NATIONAL_INSURANCE_PAYMENT,
@@ -122,6 +140,7 @@ export const Routes = {
   DELETE_TAX_PAYMENT,
   SEARCH_TAX_YEARS,
   GET_TAX_YEAR,
+  GET_BUSINESS_TAX_YEAR,
   ADD_TAX_YEAR,
   UPDATE_TAX_YEAR,
   DELETE_TAX_YEAR,
