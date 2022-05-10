@@ -9,4 +9,5 @@ export default interface TaxYear {
   endDate: Date;
   incomeTax: TaxDefinition;
   dividendsTax: TaxDefinition;
+  vatBands: number[];
 }

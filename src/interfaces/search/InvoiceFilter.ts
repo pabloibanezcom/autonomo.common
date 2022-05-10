@@ -5,5 +5,4 @@ export default interface InvoiceFilter extends BaseFilter {
   endIssuedDate?: Date;
   startPaymentDate?: Date;
   endPaymentDate?: Date;
-  type?: string;
 }

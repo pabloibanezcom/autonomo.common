@@ -8,6 +8,7 @@ export default interface Business {
   _id?: Types.ObjectId;
   name: string;
   type: BusinessType;
+  country: string;
   defaultCurrency?: Currency;
   exchangeRates?: ExchangeRate[];
   company?: Company;
