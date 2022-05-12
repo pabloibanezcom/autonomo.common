@@ -12,4 +12,5 @@ export default interface Company {
   address?: Address;
   director?: Person;
   defaultCurrency?: Currency;
+  color?: string;
 }

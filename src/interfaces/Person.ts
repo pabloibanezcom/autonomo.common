@@ -9,5 +9,6 @@ export default interface Person {
   nif?: string;
   gender?: 'male' | 'female';
   picture?: string;
+  color?: string;
   address?: Address;
 }
