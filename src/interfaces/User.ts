@@ -11,6 +11,7 @@ export default interface User {
   nif?: string;
   gender?: 'male' | 'female';
   picture?: string;
+  color?: string;
   address?: Address;
   defaultBusiness?: Types.ObjectId;
 }
