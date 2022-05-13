@@ -5,5 +5,6 @@ export default interface Category {
   business: Types.ObjectId;
   name: string;
   color: string;
+  altColor: string;
   type: string;
 }
