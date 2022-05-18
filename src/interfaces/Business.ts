@@ -14,4 +14,5 @@ export default interface Business {
   company?: Company;
   soleTrader?: Person;
   authorisedPeople: AuthorisedPerson[];
+  nextInvoiceNumber: string;
 }
