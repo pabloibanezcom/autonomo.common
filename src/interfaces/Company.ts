@@ -10,6 +10,7 @@ export default interface Company {
   country?: string;
   cifVat?: string;
   address?: Address;
+  creationDate?: Date;
   director?: Person;
   defaultCurrency?: Currency;
   color?: string;
