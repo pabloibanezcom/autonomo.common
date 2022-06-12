@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-import { BusinessPerson, Company, Person } from '.';
+import { BusinessPerson, Company, Person, TaxYear } from '.';
 import { BusinessType } from '../enums';
 import Currency from '../types/Currency';
 import ExchangeRate from './ExchangeRate';
@@ -13,7 +13,9 @@ export default interface Business {
   exchangeRates?: ExchangeRate[];
   company?: Company;
   soleTrader?: Person;
+  tradingStartDate?: Date;
   people: BusinessPerson[];
+  currentTaxYear?: TaxYear;
   nextInvoiceNumber: string;
   natureOfBusiness?: string;
 }
