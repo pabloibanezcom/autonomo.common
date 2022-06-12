@@ -1,12 +1,12 @@
-import { Types } from 'mongoose';
-import { Person, UserBusiness } from '.';
+import { PopulatedDoc, Types } from 'mongoose';
+import { Business, Person, UserBusiness } from '.';
 
 export default interface User {
   _id?: Types.ObjectId;
   email: string;
   password: string;
   isAdmin?: boolean;
-  defaultBusiness?: Types.ObjectId;
+  defaultBusiness?: PopulatedDoc<Business>;
   businesses?: UserBusiness[];
-  person: Person;
+  person: PopulatedDoc<Person>;
 }

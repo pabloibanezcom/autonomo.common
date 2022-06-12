@@ -1,6 +1,6 @@
 import { Types } from 'mongoose';
 import { BusinessPerson, Company, Person } from '.';
-import BusinessType from '../types/BusinessType';
+import { BusinessType } from '../enums';
 import Currency from '../types/Currency';
 import ExchangeRate from './ExchangeRate';
 

@@ -1,9 +1,9 @@
 import { Types } from 'mongoose';
-import { BusinessRoles } from '../enums';
-import { GrantTypes } from '../enums/GrantTypes';
+import { BusinessRole } from '../enums';
+import { GrantType } from '../enums/GrantType';
 
 export default interface UserBusiness {
   business: Types.ObjectId;
-  grantType: GrantTypes;
-  role: BusinessRoles;
+  grantType: GrantType;
+  role: BusinessRole;
 }

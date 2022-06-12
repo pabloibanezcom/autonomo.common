@@ -1,4 +1,4 @@
-export enum HttpCodes {
+export enum HttpCode {
   GET = 200,
   POST = 201,
   PUT = 200,

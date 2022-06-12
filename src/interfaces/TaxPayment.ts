@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-import TaxType from '../types/TaxType';
+import { TaxType } from '../enums';
 import CurrencyAmount from './CurrencyAmount';
 
 export default interface TaxPayment {

@@ -1,8 +1,9 @@
-import { Types } from 'mongoose';
-import { BusinessRoles } from '../enums';
+import { PopulatedDoc } from 'mongoose';
+import { BusinessRole } from '../enums';
+import Person from './Person';
 
 export default interface BusinessPerson {
-  person: Types.ObjectId;
-  role: BusinessRoles;
+  person: PopulatedDoc<Person>;
+  role: BusinessRole;
   since?: Date;
 }
