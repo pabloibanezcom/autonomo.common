@@ -28,18 +28,21 @@ import {
 export const transformPaginationToQueryOptions = (pagination: Pagination, sorting: Sorting): QueryOptions => {
   return {
     limit: pagination?.items,
-    skip: pagination ? (pagination.page - 1) * pagination.items : undefined,
+    skip: pagination ? pagination.page * pagination.items : undefined,
     sort: sorting?.sortBy ? `${sorting.desc ? '-' : ''}${sorting.sortBy}` : undefined
   };
 };
 
 export const transformSearchFilterToQuery = (searchFilter: BaseFilter): BaseQuery => {
-  const { startDate, endDate } = searchFilter;
-  return {
-    ...((startDate || endDate) && {
-      date: { ...(startDate && { $gte: startDate }), ...(endDate && { $lte: endDate }) }
-    })
-  };
+  const { startDate, endDate, match } = searchFilter;
+  const filter: BaseQuery = {};
+  if (startDate || endDate) {
+    filter.date = { ...(startDate && { $gte: startDate }), ...(endDate && { $lte: endDate }) };
+  }
+  if (match) {
+    filter[match.prop] = { $regex: match.str, $options: 'i' };
+  }
+  return filter;
 };
 
 export const transformSearchResultToFilter = (searchResult: BaseSearchResult): BaseFilter => {
@@ -61,8 +64,10 @@ export const transformSearchFilterToCategoryQuery = (searchFilter: CategoryFilte
 };
 
 export const transformSearchFilterToCompanyQuery = (searchFilter: CompanyFilter): CompanyQuery => {
+  const { country } = searchFilter;
   return {
-    ...transformSearchFilterToQuery(searchFilter)
+    ...transformSearchFilterToQuery(searchFilter),
+    ...(country && { country })
   };
 };
 
@@ -125,7 +130,7 @@ export const transformSearchFilterToTaxYearQuery = (searchFilter: TaxYearFilter)
 };
 
 export const buildPagination = (requestPagination: Pagination, totalItems: number): Pagination => {
-  const page = requestPagination?.page || 1;
+  const page = requestPagination?.page || 0;
   const items = requestPagination?.items || 10;
   const totalPages = Math.ceil(totalItems / items);
   return {
@@ -134,7 +139,7 @@ export const buildPagination = (requestPagination: Pagination, totalItems: numbe
     items,
     totalItems,
     totalPages,
-    prevPage: page > 1 ? page - 1 : null,
+    prevPage: page > 0 ? page - 1 : null,
     nextPage: page < totalPages ? page + 1 : null
   };
 };
