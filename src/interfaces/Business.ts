@@ -1,4 +1,4 @@
-import { Types } from 'mongoose';
+import { PopulatedDoc, Types } from 'mongoose';
 import { BusinessPerson, Company, Person, TaxYear } from '.';
 import { BusinessType } from '../enums';
 import Currency from '../types/Currency';
@@ -11,8 +11,8 @@ export default interface Business {
   country: string;
   defaultCurrency?: Currency;
   exchangeRates?: ExchangeRate[];
-  company?: Company;
-  soleTrader?: Person;
+  company?: PopulatedDoc<Company>;
+  soleTrader?: PopulatedDoc<Person>;
   tradingStartDate?: Date;
   people: BusinessPerson[];
   currentTaxYear?: TaxYear;

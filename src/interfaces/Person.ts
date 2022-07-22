@@ -1,4 +1,5 @@
 import { Types } from 'mongoose';
+import { Gender } from '../enums';
 import Address from './Address';
 
 export default interface Person {
@@ -8,7 +9,7 @@ export default interface Person {
   fullName?: string;
   email: string;
   nif?: string;
-  gender?: 'male' | 'female';
+  gender?: Gender;
   picture?: string;
   color?: string;
   address?: Address;
