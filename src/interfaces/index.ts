@@ -9,6 +9,7 @@ import File from './File';
 import Income from './Income';
 import Invoice from './Invoice';
 import InvoiceProductOrService from './InvoiceProductOrService';
+import InvoicesStats from './InvoicesStats';
 import NationalInsurancePayment from './NationalInsurancePayment';
 import Person from './Person';
 import TaxDefinition from './TaxDefinition';
@@ -32,6 +33,7 @@ export type {
   Income,
   Invoice,
   InvoiceProductOrService,
+  InvoicesStats,
   NationalInsurancePayment,
   Person,
   User,
