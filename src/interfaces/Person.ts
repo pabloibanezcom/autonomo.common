@@ -1,6 +1,7 @@
 import { Types } from 'mongoose';
 import { Gender } from '../enums';
 import Address from './Address';
+import File from './File';
 
 export default interface Person {
   _id?: Types.ObjectId;
@@ -10,7 +11,7 @@ export default interface Person {
   email: string;
   nif?: string;
   gender?: Gender;
-  picture?: string;
+  picture?: File;
   color?: string;
   address?: Address;
 }
