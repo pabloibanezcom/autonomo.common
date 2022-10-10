@@ -6,6 +6,7 @@ import ExchangeRate from './ExchangeRate';
 
 export default interface Business {
   _id?: Types.ObjectId;
+  key: string;
   name: string;
   type: BusinessType;
   country: string;
