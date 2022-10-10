@@ -24,6 +24,9 @@ import PersonFilter from './PersonFilter';
 import PersonQuery from './PersonQuery';
 import PersonSearchResult from './PersonSearchResult';
 import Sorting from './Sorting';
+import TagFilter from './TagFilter';
+import TagQuery from './TagQuery';
+import TagSearchResult from './TagSearchResult';
 import TaxPaymentFilter from './TaxPaymentFilter';
 import TaxPaymentQuery from './TaxPaymentQuery';
 import TaxPaymentSearchResult from './TaxPaymentSearchResult';
@@ -58,6 +61,9 @@ export type {
   PersonQuery,
   PersonSearchResult,
   Sorting,
+  TagFilter,
+  TagQuery,
+  TagSearchResult,
   TaxPaymentFilter,
   TaxPaymentQuery,
   TaxPaymentSearchResult,

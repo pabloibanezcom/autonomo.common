@@ -68,6 +68,13 @@ const ADD_PERSON = concatRoutePaths([BUSINESS_ID, PERSON]);
 const UPDATE_PERSON = concatRoutePaths([BUSINESS_ID, PERSON, ID]);
 const DELETE_PERSON = concatRoutePaths([BUSINESS_ID, PERSON, ID]);
 
+// tag
+const TAG = 'tag';
+const SEARCH_TAGS = concatRoutePaths([BUSINESS_ID, TAG, SEARCH]);
+const ADD_TAG = concatRoutePaths([BUSINESS_ID, TAG]);
+const UPDATE_TAG = concatRoutePaths([BUSINESS_ID, TAG, ID]);
+const DELETE_TAG = concatRoutePaths([BUSINESS_ID, TAG, ID]);
+
 // tax payment
 const TAX_PAYMENT = 'tax-payment';
 const SEARCH_TAX_PAYMENTS = concatRoutePaths([BUSINESS_ID, TAX_PAYMENT, SEARCH]);
@@ -133,6 +140,10 @@ export const Routes = {
   ADD_PERSON,
   UPDATE_PERSON,
   DELETE_PERSON,
+  SEARCH_TAGS,
+  ADD_TAG,
+  UPDATE_TAG,
+  DELETE_TAG,
   SEARCH_TAX_PAYMENTS,
   GET_TAX_PAYMENT,
   ADD_TAX_PAYMENT,

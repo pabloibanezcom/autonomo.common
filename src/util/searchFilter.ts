@@ -19,6 +19,8 @@ import {
   PersonFilter,
   PersonQuery,
   Sorting,
+  TagFilter,
+  TagQuery,
   TaxPaymentFilter,
   TaxPaymentQuery,
   TaxYearFilter,
@@ -112,6 +114,12 @@ export const transformSearchFilterToNationalInsuranceQuery = (
 };
 
 export const transformSearchFilterToPersonQuery = (searchFilter: PersonFilter): PersonQuery => {
+  return {
+    ...transformSearchFilterToQuery(searchFilter)
+  };
+};
+
+export const transformSearchFilterToTagQuery = (searchFilter: TagFilter): TagQuery => {
   return {
     ...transformSearchFilterToQuery(searchFilter)
   };

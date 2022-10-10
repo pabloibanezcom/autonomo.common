@@ -12,6 +12,7 @@ import InvoiceProductOrService from './InvoiceProductOrService';
 import InvoicesStats from './InvoicesStats';
 import NationalInsurancePayment from './NationalInsurancePayment';
 import Person from './Person';
+import Tag from './Tag';
 import TaxDefinition from './TaxDefinition';
 import TaxPayment from './TaxPayment';
 import TaxYear from './TaxYear';
@@ -38,6 +39,7 @@ export type {
   Person,
   User,
   UserBusiness,
+  Tag,
   TaxDefinition,
   TaxPayment,
   TaxYear,
