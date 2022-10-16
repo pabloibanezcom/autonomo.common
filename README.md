@@ -13,6 +13,7 @@ A library that contains all needed common resources to be used in [autonomo.api]
 - [Running in development mode](#running-in-development-mode)
 - [Building](#building)
 - [Publishing](#publishing)
+- [Example of use in other client repo](#example-of-use-in-other-client-repo)
 
 ## Installing
 
