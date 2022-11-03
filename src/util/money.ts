@@ -24,14 +24,13 @@ export const getCurrencySymbol = (currency: Currency): string => {
 };
 
 export const getExchangeRate = (
-  exchangeRates: ExchangeRate[] = [],
+  exchangeRates: ExchangeRate[],
   currencyFrom: Currency,
   currencyTo: Currency
 ): ExchangeRate => {
-  return exchangeRates.find(
-    r =>
-      (r.currencyFrom === currencyFrom && r.currencyTo === currencyTo) ||
-      (r.currencyFrom === currencyTo && r.currencyTo === currencyFrom)
+  return (
+    exchangeRates.find(r => r.currencyFrom === currencyFrom && r.currencyTo === currencyTo) ||
+    exchangeRates.find(r => r.currencyFrom === currencyTo && r.currencyTo === currencyFrom)
   );
 };
 
