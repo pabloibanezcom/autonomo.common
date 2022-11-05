@@ -12,6 +12,7 @@ A library that contains all needed common resources to be used in [autonomo.api]
 - [Installing](#installing)
 - [Running in development mode](#running-in-development-mode)
 - [Building](#building)
+- [Testing](#testing)
 - [Publishing](#publishing)
 - [Example of use in other client repo](#example-of-use-in-other-client-repo)
 
@@ -33,6 +34,20 @@ This will build the package and will watch for any change to re-build it.
 
 ```bash
 npm run build
+```
+
+## Testing
+
+```bash
+# running tests once
+npm run test
+
+# running tests on every change on code
+npm run test:watch
+
+# running tests and getting coverage report
+npm run test:coverage
+
 ```
 
 ## Publishing
